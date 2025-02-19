@@ -1,6 +1,9 @@
 package ClassDemo;
 
 import java.beans.VetoableChangeSupport;
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,6 +15,32 @@ public class Main {
         Airplane myFirstAirplane = new Airplane("red", 2, 600, "Boeing", "737", "airplane", 0);
         
         myFirstAirplane.flying();
+
+        //Prompting the user for user input 
+        
+        //Create a scanner object to read user input from my console
+        int userAge = getAgeFromUser();
+
+        //We can use try-with-resources to automatically dispose of objects
+        //that we will not need, outside of that specific block of code. 
+        
+        System.out.println(userAge);
+        
+    }
+
+    public static int getAgeFromUser() {
+
+        int age = 0;
+
+        try(Scanner myScanner = new Scanner(System.in)){
+            System.out.println("Please enter your age: ");
+            age = myScanner.nextInt();
+            //System.out.println("Your age is: " + age);
+        } catch (Exception IOe){
+            System.out.println("Please enter an integer");
+        } 
+
+        return age;
     }
 }
 
