@@ -1,4 +1,4 @@
-    //Generics Class 
+//Generics Class 
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class GenericsDemo {
     }
     
     //Creating a method to create an array of box types.
-    //It can accept a variable number of arguments any type, as long as all arguments passed in are the same type.
+    //It can accept a variable number of arguments of any type, as long as all arguments passed in are the same type.
     public static <T> ArrayList<Box<T>> createBoxArray(T... values) {
         ArrayList<Box<T>> boxList = new ArrayList<>();
 

@@ -1,4 +1,4 @@
-package Demo1;
+package Basics;
 
 
 public class Demo1 {
